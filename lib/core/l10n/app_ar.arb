@@ -1,0 +1,16 @@
+{
+  "@@locale": "ar",
+  "appName": "نومو إي آر بي",
+  "dashboard": "لوحة التحكم",
+  "invoices": "الفواتير",
+  "createInvoice": "إنشاء فاتورة",
+  "zatcaCleared": "تمت تخليص زاتكا",
+  "sarAmount": "ر.س {amount}",
+  "@sarAmount": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  }
+}

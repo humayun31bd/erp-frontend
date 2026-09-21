@@ -1,0 +1,16 @@
+{
+  "@@locale": "en",
+  "appName": "Numou ERP",
+  "dashboard": "Dashboard",
+  "invoices": "Invoices",
+  "createInvoice": "Create Invoice",
+  "zatcaCleared": "ZATCA Cleared",
+  "sarAmount": "SAR {amount}",
+  "@sarAmount": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  }
+}
