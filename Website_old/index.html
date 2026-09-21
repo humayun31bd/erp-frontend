@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZATCA Engine — ZATCA Phase 2 E-Invoicing & WhatsApp Automation for Saudi Arabia</title>
+  <meta name="description" content="The ultimate ZATCA Phase 2 E-Invoicing & WhatsApp Engine for Saudi service companies. One JSON API call for complete compliance automation.">
+  <meta name="keywords" content="ZATCA, Phase 2, e-invoicing, WhatsApp, Saudi Arabia, FATOORA, compliance, automation, API">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+</head>
+<body>
+
+  <!-- ========== Navbar ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo">
+        <div class="navbar__logo-icon">Z</div>
+        <span>ZATCA <span class="text-gradient">Engine</span></span>
+      </a>
+
+      <div class="navbar__links">
+        <a href="index.html" class="navbar__link active" data-i18n="nav.home">Home</a>
+        <a href="features.html" class="navbar__link" data-i18n="nav.features">Features</a>
+        <a href="pricing.html" class="navbar__link" data-i18n="nav.pricing">Pricing</a>
+        <a href="demo.html" class="navbar__link" data-i18n="nav.demo">Demo</a>
+        <a href="about.html" class="navbar__link" data-i18n="nav.about">About</a>
+        <a href="contact.html" class="navbar__link" data-i18n="nav.contact">Contact</a>
+        <a href="blog.html" class="navbar__link" data-i18n="nav.blog">Blog</a>
+      </div>
+
+      <div class="navbar__actions">
+        <button class="lang-toggle" data-action="toggle-lang" data-i18n="nav.langToggle">🌐 العربية</button>
+        <a href="demo.html" class="btn btn--primary btn--small" data-i18n="nav.getStarted">Get Started</a>
+      </div>
+
+      <div class="navbar__hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav">
+    <a href="index.html" class="mobile-nav__link" data-i18n="nav.home">Home</a>
+    <a href="features.html" class="mobile-nav__link" data-i18n="nav.features">Features</a>
+    <a href="pricing.html" class="mobile-nav__link" data-i18n="nav.pricing">Pricing</a>
+    <a href="demo.html" class="mobile-nav__link" data-i18n="nav.demo">Demo</a>
+    <a href="about.html" class="mobile-nav__link" data-i18n="nav.about">About</a>
+    <a href="contact.html" class="mobile-nav__link" data-i18n="nav.contact">Contact</a>
+    <a href="blog.html" class="mobile-nav__link" data-i18n="nav.blog">Blog</a>
+    <button class="btn btn--primary" data-action="toggle-lang" data-i18n="nav.langToggle">🌐 العربية</button>
+  </div>
+
+  <!-- ========== Hero ========== -->
+  <section class="hero" id="hero">
+    <div class="hero__bg">
+      <canvas class="hero__canvas"></canvas>
+      <div class="hero__gradient"></div>
+    </div>
+
+    <div class="container container--wide">
+      <div class="hero__inner">
+        <div class="hero__content">
+          <div class="hero__badge" data-i18n="hero.badge">🚀 ZATCA Phase 2 Compliant</div>
+          <h1 class="hero__title">
+            <span data-i18n="hero.title">The Ultimate ZATCA Phase 2 E-Invoicing & WhatsApp Engine</span>
+            <br>
+            <span class="text-gradient" data-i18n="hero.titleHighlight">for Saudi Service Companies</span>
+          </h1>
+          <p class="hero__subtitle" data-i18n="hero.subtitle">
+            One JSON API Call → ZATCA Phase 2 Clearance → WhatsApp Invoice Delivery. Built for agencies, loved by developers.
+          </p>
+          <div class="hero__ctas">
+            <a href="demo.html" class="btn btn--primary btn--large" data-i18n="hero.ctaPrimary">Start Free Trial</a>
+            <a href="features.html" class="btn btn--outline btn--large" data-i18n="hero.ctaSecondary">Explore API Docs</a>
+          </div>
+          <div class="hero__stats">
+            <div class="hero__stat">
+              <span class="hero__stat-value" data-i18n="hero.stat1Value">< 300ms</span>
+              <span class="hero__stat-label" data-i18n="hero.stat1Label">API Latency</span>
+            </div>
+            <div class="hero__stat">
+              <span class="hero__stat-value" data-i18n="hero.stat2Value">100%</span>
+              <span class="hero__stat-label" data-i18n="hero.stat2Label">Compliance</span>
+            </div>
+            <div class="hero__stat">
+              <span class="hero__stat-value" data-i18n="hero.stat3Value">99.5%</span>
+              <span class="hero__stat-label" data-i18n="hero.stat3Label">Delivery Rate</span>
+            </div>
+            <div class="hero__stat">
+              <span class="hero__stat-value" data-i18n="hero.stat4Value">< 15min</span>
+              <span class="hero__stat-label" data-i18n="hero.stat4Label">Setup Time</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__image reveal-right">
+          <img src="assets/images/hero-dashboard.jpg" alt="ZATCA Dashboard - Saudi business professional using real-time compliance dashboard" width="640" height="360" loading="eager">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Trust Badges ========== -->
+  <section class="trust-bar">
+    <div class="trust-bar__inner">
+      <div class="trust-badge"><span class="trust-badge__icon">🏛️</span> <span data-i18n="trust.vision2030">Saudi Vision 2030 Aligned</span></div>
+      <div class="trust-badge"><span class="trust-badge__icon">✅</span> <span data-i18n="trust.zatca">ZATCA FATOORA Phase 2 Ready</span></div>
+      <div class="trust-badge"><span class="trust-badge__icon">🔒</span> <span data-i18n="trust.aws">AWS Riyadh (me-central-1) Hosted</span></div>
+      <div class="trust-badge"><span class="trust-badge__icon">📋</span> <span data-i18n="trust.ccrf">CCRF Data Residency Compliant</span></div>
+      <div class="trust-badge"><span class="trust-badge__icon">🗄️</span> <span data-i18n="trust.archive">6-Year Archiving (ZATCA Regulation)</span></div>
+      <div class="trust-badge"><span class="trust-badge__icon">🔐</span> <span data-i18n="trust.encryption">AES-256 Encryption at Rest</span></div>
+    </div>
+  </section>
+
+  <!-- ========== How It Works ========== -->
+  <section class="section how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__badge" data-i18n="hiw.badge">⚙️ How It Works</span>
+        <h2 class="section__title" data-i18n="hiw.title">From API Call to WhatsApp Delivery in Under 300ms</h2>
+        <p class="section__subtitle" data-i18n="hiw.subtitle">Our engine handles the entire ZATCA compliance pipeline automatically.</p>
+      </div>
+
+      <div class="steps-timeline">
+        <!-- Step 1 -->
+        <div class="step-item">
+          <div class="step-item__number">1</div>
+          <div class="step-item__content">
+            <div class="step-item__label" data-i18n="hiw.step1Label">Step 1 — API Call</div>
+            <h3 class="step-item__title" data-i18n="hiw.step1Title">Send JSON Payload</h3>
+            <p class="step-item__desc" data-i18n="hiw.step1Desc">Your ERP or system sends a single POST request to /api/v1/invoices/zatca-whatsapp with invoice data in JSON format. That's all you need to do.</p>
+            <div class="code-block mt-3">
+              <div class="code-block__header">
+                <div class="code-block__dots">
+                  <span class="code-block__dot code-block__dot--red"></span>
+                  <span class="code-block__dot code-block__dot--yellow"></span>
+                  <span class="code-block__dot code-block__dot--green"></span>
+                </div>
+                <span class="code-block__lang">JSON</span>
+              </div>
+              <pre class="code-block__body"><span class="code-bracket">POST</span> <span class="code-string">/api/v1/invoices/zatca-whatsapp</span>
+<span class="code-bracket">{</span>
+  <span class="code-key">"seller"</span>: <span class="code-bracket">{</span> <span class="code-key">"name"</span>: <span class="code-string">"Tech Solutions"</span>, <span class="code-key">"vat"</span>: <span class="code-string">"300..."</span> <span class="code-bracket">}</span>,
+  <span class="code-key">"items"</span>: <span class="code-bracket">[{</span> <span class="code-key">"name"</span>: <span class="code-string">"IT Consulting"</span>, <span class="code-key">"qty"</span>: <span class="code-number">10</span>, <span class="code-key">"vat"</span>: <span class="code-number">15</span> <span class="code-bracket">}]</span>,
+  <span class="code-key">"whatsapp"</span>: <span class="code-bracket">{</span> <span class="code-key">"to"</span>: <span class="code-string">"+966XXXXXXXXX"</span> <span class="code-bracket">}</span>
+<span class="code-bracket">}</span></pre>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step-item">
+          <div class="step-item__number">2</div>
+          <div class="step-item__content">
+            <div class="step-item__label" data-i18n="hiw.step2Label">Step 2 — ZATCA Engine</div>
+            <h3 class="step-item__title" data-i18n="hiw.step2Title">Cryptographic Processing</h3>
+            <p class="step-item__desc" data-i18n="hiw.step2Desc">Our engine automatically generates UBL 2.1 XML, computes SHA-256 hash, chains it with previous invoices, and applies ECDSA secp256k1 digital signature with your CSID.</p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-item">
+          <div class="step-item__number">3</div>
+          <div class="step-item__content">
+            <div class="step-item__label" data-i18n="hiw.step3Label">Step 3 — Clearance</div>
+            <h3 class="step-item__title" data-i18n="hiw.step3Title">ZATCA Portal Integration</h3>
+            <p class="step-item__desc" data-i18n="hiw.step3Desc">B2B Standard Invoices get real-time mTLS clearance via FATOORA Portal. B2C Simplified Invoices are queued for async 24h batch reporting. Failed attempts go to DLQ with automatic retry.</p>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="step-item">
+          <div class="step-item__number">4</div>
+          <div class="step-item__content">
+            <div class="step-item__label" data-i18n="hiw.step4Label">Step 4 — PDF & QR</div>
+            <h3 class="step-item__title" data-i18n="hiw.step4Title">Document Generation</h3>
+            <p class="step-item__desc" data-i18n="hiw.step4Desc">System generates PDF/A-3 with embedded XML and Base64 TLV QR Code containing Seller Name, VAT Number, Timestamp, Total, VAT Amount, Hash, and ECDSA Signature.</p>
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="step-item">
+          <div class="step-item__number">5</div>
+          <div class="step-item__content">
+            <div class="step-item__label" data-i18n="hiw.step5Label">Step 5 — Delivery</div>
+            <h3 class="step-item__title" data-i18n="hiw.step5Title">WhatsApp Delivery</h3>
+            <p class="step-item__desc" data-i18n="hiw.step5Desc">Meta WhatsApp Cloud API sends bilingual Arabic/English invoice template with PDF attachment and Click-to-Pay button (Moyasar/PayTabs). Real-time delivery tracking: SENT → DELIVERED → READ.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Core Features ========== -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__badge" data-i18n="features.badge">🔥 Capabilities</span>
+        <h2 class="section__title" data-i18n="features.title">Everything You Need for ZATCA Compliance & WhatsApp Automation</h2>
+        <p class="section__subtitle" data-i18n="features.subtitle">Five powerful modules. One API call. Complete automation.</p>
+      </div>
+
+      <div class="features-grid stagger-children">
+        <div class="glass-card">
+          <div class="glass-card__icon">🔐</div>
+          <h3 class="glass-card__title" data-i18n="feat1.title">ZATCA Phase 2 Cryptographic Engine</h3>
+          <p class="glass-card__desc" data-i18n="feat1.desc">UBL 2.1 XML, SHA-256 hash chaining, ECDSA signing, mTLS clearance — all abstracted into one API call.</p>
+        </div>
+
+        <div class="glass-card">
+          <div class="glass-card__icon">📱</div>
+          <h3 class="glass-card__title" data-i18n="feat2.title">WhatsApp Cloud API Middleware</h3>
+          <p class="glass-card__desc" data-i18n="feat2.desc">Auto-deliver cleared invoices with bilingual templates, payment links, and real-time delivery tracking.</p>
+        </div>
+
+        <div class="glass-card">
+          <div class="glass-card__icon">🏢</div>
+          <h3 class="glass-card__title" data-i18n="feat3.title">White-Label Agency Portal</h3>
+          <p class="glass-card__desc" data-i18n="feat3.desc">Custom domains, branded PDFs, tenant API keys, analytics dashboard — your brand, our engine.</p>
+        </div>
+
+        <div class="glass-card">
+          <div class="glass-card__icon">⚡</div>
+          <h3 class="glass-card__title" data-i18n="feat4.title">< 15 Min Developer Onboarding</h3>
+          <p class="glass-card__desc" data-i18n="feat4.desc">Sandbox → Production in minutes. Full REST API with comprehensive docs and code examples.</p>
+        </div>
+
+        <div class="glass-card">
+          <div class="glass-card__icon">💳</div>
+          <h3 class="glass-card__title" data-i18n="feat5.title">Integrated Payment Gateway</h3>
+          <p class="glass-card__desc" data-i18n="feat5.desc">Click-to-Pay via Moyasar/PayTabs. Auto-mark paid invoices. WhatsApp payment receipts.</p>
+        </div>
+
+        <div class="glass-card">
+          <div class="glass-card__icon">🔄</div>
+          <h3 class="glass-card__title" data-i18n="feat6.title">CSID Automation</h3>
+          <p class="glass-card__desc" data-i18n="feat6.desc">Automated OTP-based Compliance CSID → Production CSID pipeline. Zero manual certificate management.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ROI Calculator ========== -->
+  <section class="section" id="roi-calculator" style="background: rgba(0,212,170,0.02);">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__badge" data-i18n="roi.badge">📊 ROI Calculator</span>
+        <h2 class="section__title" data-i18n="roi.title">Calculate Your Savings</h2>
+        <p class="section__subtitle" data-i18n="roi.subtitle">See how much time and money you can save with automated ZATCA compliance.</p>
+      </div>
+
+      <div class="roi-calculator reveal-scale">
+        <div class="roi-calculator__inputs">
+          <div class="roi-input-group">
+            <label data-i18n="roi.invoicesLabel">Monthly Invoices</label>
+            <input type="range" id="roi-invoices" min="100" max="50000" value="1000" step="100">
+            <span class="roi-value" id="roi-invoices-value">1,000</span>
+          </div>
+          <div class="roi-input-group">
+            <label data-i18n="roi.hoursLabel">Hours per Manual Invoice</label>
+            <input type="range" id="roi-hours" min="0.5" max="5" value="2" step="0.5">
+            <span class="roi-value" id="roi-hours-value">2.0</span>
+          </div>
+          <div class="roi-input-group">
+            <label data-i18n="roi.valueLabel">Avg Invoice Value (SAR)</label>
+            <input type="range" id="roi-value" min="100" max="50000" value="2000" step="100">
+            <span class="roi-value" id="roi-value-value">2,000 SAR</span>
+          </div>
+        </div>
+
+        <div class="roi-calculator__results">
+          <div class="roi-result">
+            <div class="roi-result__value" id="roi-result-hours">0 hrs</div>
+            <div class="roi-result__label" data-i18n="roi.resultHours">Hours Saved / Month</div>
+          </div>
+          <div class="roi-result roi-result--highlight">
+            <div class="roi-result__value" id="roi-result-penalty">0 SAR</div>
+            <div class="roi-result__label" data-i18n="roi.resultPenalty">ZATCA Penalties Avoided / Year</div>
+          </div>
+          <div class="roi-result">
+            <div class="roi-result__value" id="roi-result-cost">0 SAR</div>
+            <div class="roi-result__label" data-i18n="roi.resultCost">Annual Cost Reduction</div>
+          </div>
+          <div class="roi-result">
+            <div class="roi-result__value" id="roi-result-speed">0ms</div>
+            <div class="roi-result__label" data-i18n="roi.resultSpeed">Processing Time</div>
+          </div>
+        </div>
+
+        <div class="text-center mt-4">
+          <a href="demo.html" class="btn btn--primary btn--large" data-i18n="roi.cta">Start Saving Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Who It's For ========== -->
+  <section class="section" id="personas">
+    <div class="container">
+      <div class="section__header reveal">
+        <h2 class="section__title" data-i18n="personas.title">Built for Every Role in the Saudi Business Ecosystem</h2>
+      </div>
+
+      <div class="personas-grid stagger-children">
+        <div class="glass-card">
+          <div class="glass-card__icon">🏢</div>
+          <h3 class="glass-card__title" data-i18n="persona1.title">For Agencies & Resellers</h3>
+          <ul style="display:flex;flex-direction:column;gap:0.6rem;margin-top:1rem;">
+            <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span> <span data-i18n="persona1.feat1">White-label the engine under your brand</span></li>
+            <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span> <span data-i18n="persona1.feat2">Manage unlimited sub-tenants</span></li>
+            <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span> <span data-i18n="persona1.feat3">Revenue share per invoice</span></li>
+          </ul>
+        </div>
+
+        <div class="glass-card">
+          <div class="glass-card__icon">💻</div>
+          <h3 class="glass-card__title" data-i18n="persona2.title">For Developers & Integrators</h3>
+          <ul style="display:flex;flex-direction:column;gap:0.6rem;margin-top:1rem;">
+            <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span> <span data-i18n="persona2.feat1">Single JSON endpoint, <15min setup</span></li>
+            <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span> <span data-i18n="persona2.feat2">Full REST API docs + code examples</span></li>
+            <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span> <span data-i18n="persona2.feat3">Sandbox → Production CSID automation</span></li>
+          </ul>
+        </div>
+
+        <div class="glass-card">
+          <div class="glass-card__icon">🛒</div>
+          <h3 class="glass-card__title" data-i18n="persona3.title">For Service Businesses</h3>
+          <ul style="display:flex;flex-direction:column;gap:0.6rem;margin-top:1rem;">
+            <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span> <span data-i18n="persona3.feat1">1-click invoice, WhatsApp delivery</span></li>
+            <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span> <span data-i18n="persona3.feat2">No technical knowledge needed</span></li>
+            <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span> <span data-i18n="persona3.feat3">Mada/STC Pay payment links</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Testimonials ========== -->
+  <section class="section" id="testimonials" style="background: rgba(0,212,170,0.02);">
+    <div class="container">
+      <div class="section__header reveal">
+        <h2 class="section__title" data-i18n="testimonials.title">Trusted by Saudi Businesses</h2>
+      </div>
+
+      <div class="stats-row reveal">
+        <div class="stat-item">
+          <div class="stat-item__value" data-counter="50000" data-counter-suffix="+">0+</div>
+          <div class="stat-item__label">Invoices Processed</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-item__value" data-counter="200" data-counter-suffix="+">0+</div>
+          <div class="stat-item__label">Saudi Businesses</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-item__value" data-counter="99" data-counter-suffix=".95%">0%</div>
+          <div class="stat-item__label">Uptime</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-item__value" data-counter="100" data-counter-suffix="%">0%</div>
+          <div class="stat-item__label">ZATCA Compliance</div>
+        </div>
+      </div>
+
+      <div class="testimonials-carousel reveal">
+        <div class="testimonials-track">
+          <div class="testimonial-card">
+            <p class="testimonial-card__quote">"We integrated the ZATCA Engine in under 30 minutes. Our entire FATOORA compliance is now automated — we haven't had a single failed clearance in 6 months."</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">AH</div>
+              <div>
+                <div class="testimonial-card__name">Ahmed Hassan</div>
+                <div class="testimonial-card__role">CTO, TechServe Solutions</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <p class="testimonial-card__quote">"The WhatsApp invoice delivery changed our business. Our clients pay 60% faster now because they get the invoice with a Pay button directly on WhatsApp."</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">MK</div>
+              <div>
+                <div class="testimonial-card__name">Mohammed Al-Khaldi</div>
+                <div class="testimonial-card__role">Owner, Gulf Maintenance Co.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <p class="testimonial-card__quote">"As an accounting firm, we white-labeled the engine for 15 of our clients. The multi-tenant dashboard and per-tenant CSID automation saved us thousands of hours."</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">SA</div>
+              <div>
+                <div class="testimonial-card__name">Sara Al-Fahad</div>
+                <div class="testimonial-card__role">Managing Partner, Horizon Accounting</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <p class="testimonial-card__quote">"The sandbox-to-production CSID pipeline is genius. We tested, validated, and went live in one afternoon. No other ZATCA solution comes close to this developer experience."</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">FK</div>
+              <div>
+                <div class="testimonial-card__name">Fahad Al-Khayyat</div>
+                <div class="testimonial-card__role">Lead Developer, ERP Solutions KSA</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonials-controls">
+          <button class="testimonials-btn" data-testimonial="prev" aria-label="Previous">←</button>
+          <button class="testimonials-btn" data-testimonial="next" aria-label="Next">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA Banner ========== -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-banner reveal-scale">
+        <h2 class="section__title" data-i18n="cta.title">Ready to Automate Your ZATCA Compliance?</h2>
+        <p data-i18n="cta.subtitle">Join hundreds of Saudi businesses already using our ZATCA + WhatsApp engine.</p>
+        <div class="hero__ctas">
+          <a href="demo.html" class="btn btn--primary btn--large" data-i18n="cta.primary">Start Free Trial</a>
+          <a href="contact.html" class="btn btn--outline btn--large" data-i18n="cta.secondary">Talk to Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Footer ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="index.html" class="navbar__logo">
+            <div class="navbar__logo-icon">Z</div>
+            <span>ZATCA <span class="text-gradient">Engine</span></span>
+          </a>
+          <p class="footer__brand-desc" data-i18n="footer.desc">The ultimate ZATCA Phase 2 E-Invoicing & WhatsApp Engine built for Saudi Arabia's digital future.</p>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="LinkedIn">in</a>
+            <a href="#" class="footer__social-link" aria-label="Twitter/X">𝕏</a>
+            <a href="#" class="footer__social-link" aria-label="WhatsApp">💬</a>
+            <a href="#" class="footer__social-link" aria-label="GitHub">⌨</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer__heading" data-i18n="footer.product">Product</h4>
+          <a href="features.html" class="footer__link" data-i18n="nav.features">Features</a>
+          <a href="pricing.html" class="footer__link" data-i18n="nav.pricing">Pricing</a>
+          <a href="demo.html" class="footer__link" data-i18n="nav.demo">Demo</a>
+          <a href="#" class="footer__link">API Documentation</a>
+          <a href="#" class="footer__link">Changelog</a>
+        </div>
+
+        <div>
+          <h4 class="footer__heading" data-i18n="footer.company">Company</h4>
+          <a href="about.html" class="footer__link" data-i18n="nav.about">About</a>
+          <a href="contact.html" class="footer__link" data-i18n="nav.contact">Contact</a>
+          <a href="blog.html" class="footer__link" data-i18n="nav.blog">Blog</a>
+          <a href="#" class="footer__link">Careers</a>
+          <a href="#" class="footer__link">Partners</a>
+        </div>
+
+        <div>
+          <h4 class="footer__heading" data-i18n="footer.resources">Resources</h4>
+          <a href="#" class="footer__link">ZATCA Phase 2 Guide</a>
+          <a href="#" class="footer__link">WhatsApp API Docs</a>
+          <a href="#" class="footer__link">Integration Examples</a>
+          <a href="#" class="footer__link">Status Page</a>
+          <a href="#" class="footer__link">Support</a>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright" data-i18n="footer.copyright">© 2026 ZATCA Engine. Built for Saudi Arabia's Digital Future.</p>
+        <div class="footer__legal">
+          <a href="#" data-i18n="footer.privacy">Privacy Policy</a>
+          <a href="#" data-i18n="footer.terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/roi-calculator.js"></script>
+</body>
+</html>

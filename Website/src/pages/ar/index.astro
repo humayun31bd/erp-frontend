@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.vue';
+import Footer from '../../components/Footer.vue';
+import LanguageSwitcher from '../../components/islands/LanguageSwitcher.vue';
+import PricingToggle from '../../components/islands/PricingToggle.vue';
+import FaqAccordion from '../../components/islands/FaqAccordion.vue';
+import { useTranslations } from '../../i18n/utils';
+
+const t = useTranslations('ar');
+---
+
+<BaseLayout 
+  title="نومو إي آر بي - تمكين نمو الأعمال الذكية" 
+  lang="ar" 
+  dir="rtl" 
+  canonicalUrl="https://numouerp.com/ar/"
+>
+  <div class="nav-wrapper">
+    <Navbar client:load lang="ar" translations={{ home: t('nav.home'), features: t('nav.features'), pricing: t('nav.pricing'), dashboard: t('nav.dashboard') }} />
+    <LanguageSwitcher client:load currentLang="ar" />
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="hero__inner">
+        <h1>{t('hero.title')}</h1>
+        <p class="hero__subtitle">{t('hero.subtitle')}</p>
+        <div class="hero__actions">
+          <a href="https://app.numouerp.com" class="btn btn--primary btn--large">{t('hero.getStarted')}</a>
+          <a href="#demo" class="btn btn--secondary btn--large">{t('hero.bookDemo')}</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="features">
+      <div class="features__inner">
+        <h2 class="text-center">{t('features.title')}</h2>
+        <div class="features__grid">
+          <div class="feature-card">
+            <h3>{t('features.zatca.title')}</h3>
+            <p>{t('features.zatca.desc')}</p>
+          </div>
+          <div class="feature-card">
+            <h3>{t('features.wa.title')}</h3>
+            <p>{t('features.wa.desc')}</p>
+          </div>
+          <div class="feature-card">
+            <h3>{t('features.agency.title')}</h3>
+            <p>{t('features.agency.desc')}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="pricing-section">
+      <h2 class="text-center">اختر الخطة المناسبة</h2>
+      <PricingToggle client:visible lang="ar" />
+    </section>
+
+    <section id="faq" class="faq-section">
+      <h2 class="text-center">الأسئلة الشائعة</h2>
+      <FaqAccordion client:visible lang="ar" />
+    </section>
+  </main>
+
+  <Footer lang="ar" />
+</BaseLayout>
+
+<style>
+/* Scoped layout styles */
+.nav-wrapper {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.hero {
+  padding: 8rem 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: #0f172a;
+}
+.hero__subtitle {
+  font-size: 1.25rem;
+  color: #475569;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+.hero__actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+.features, .pricing-section, .faq-section {
+  padding: 6rem 2rem;
+}
+.features__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+.feature-card {
+  padding: 2rem;
+  border-radius: 1rem;
+  background: white;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+</style>

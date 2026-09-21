@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Features — ZATCA Engine | 5 Powerful Modules for E-Invoicing & WhatsApp</title>
+  <meta name="description" content="Explore all 5 modules: ZATCA Cryptographic Engine, WhatsApp Cloud API, White-Label Portal, CSID Automation, and Billing. Complete compliance in one API call.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+</head>
+<body>
+
+  <!-- Navbar (same as homepage) -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo"><div class="navbar__logo-icon">Z</div><span>ZATCA <span class="text-gradient">Engine</span></span></a>
+      <div class="navbar__links">
+        <a href="index.html" class="navbar__link" data-i18n="nav.home">Home</a>
+        <a href="features.html" class="navbar__link active" data-i18n="nav.features">Features</a>
+        <a href="pricing.html" class="navbar__link" data-i18n="nav.pricing">Pricing</a>
+        <a href="demo.html" class="navbar__link" data-i18n="nav.demo">Demo</a>
+        <a href="about.html" class="navbar__link" data-i18n="nav.about">About</a>
+        <a href="contact.html" class="navbar__link" data-i18n="nav.contact">Contact</a>
+        <a href="blog.html" class="navbar__link" data-i18n="nav.blog">Blog</a>
+      </div>
+      <div class="navbar__actions">
+        <button class="lang-toggle" data-action="toggle-lang" data-i18n="nav.langToggle">🌐 العربية</button>
+        <a href="demo.html" class="btn btn--primary btn--small" data-i18n="nav.getStarted">Get Started</a>
+      </div>
+      <div class="navbar__hamburger" aria-label="Menu"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+  <div class="mobile-nav">
+    <a href="index.html" class="mobile-nav__link" data-i18n="nav.home">Home</a>
+    <a href="features.html" class="mobile-nav__link" data-i18n="nav.features">Features</a>
+    <a href="pricing.html" class="mobile-nav__link" data-i18n="nav.pricing">Pricing</a>
+    <a href="demo.html" class="mobile-nav__link" data-i18n="nav.demo">Demo</a>
+    <a href="about.html" class="mobile-nav__link" data-i18n="nav.about">About</a>
+    <a href="contact.html" class="mobile-nav__link" data-i18n="nav.contact">Contact</a>
+    <a href="blog.html" class="mobile-nav__link" data-i18n="nav.blog">Blog</a>
+    <button class="btn btn--primary" data-action="toggle-lang" data-i18n="nav.langToggle">🌐 العربية</button>
+  </div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="section__badge reveal" data-i18n="features.badge">🔥 Capabilities</span>
+      <h1 class="reveal" data-i18n="featPage.title">Five Powerful Modules. One API Call.</h1>
+      <p class="reveal" data-i18n="featPage.subtitle">Complete ZATCA + WhatsApp Automation</p>
+    </div>
+  </section>
+
+  <!-- Module A -->
+  <section class="section module-section">
+    <div class="container">
+      <div class="module-content reveal">
+        <div>
+          <div class="module-header">
+            <span class="module-header__tag" data-i18n="moduleA.tag">Module A</span>
+            <h2 data-i18n="moduleA.title">ZATCA Phase 2 Cryptographic Engine</h2>
+          </div>
+          <div class="module-features-list">
+            <div class="module-feature"><span class="module-feature__icon">✦</span><div><div class="module-feature__title" data-i18n="moduleA.feat1Title">UBL 2.1 XML Builder</div><p class="module-feature__desc" data-i18n="moduleA.feat1Desc">Automatically transforms JSON payload into ZATCA-compliant UBL 2.1 XML format.</p></div></div>
+            <div class="module-feature"><span class="module-feature__icon">✦</span><div><div class="module-feature__title" data-i18n="moduleA.feat2Title">SHA-256 Hash & Chain Engine</div><p class="module-feature__desc" data-i18n="moduleA.feat2Desc">Computes cryptographic hash of canonicalized XML and chains with previous invoice hash.</p></div></div>
+            <div class="module-feature"><span class="module-feature__icon">✦</span><div><div class="module-feature__title" data-i18n="moduleA.feat3Title">ECDSA secp256k1 Digital Signature</div><p class="module-feature__desc" data-i18n="moduleA.feat3Desc">Signs invoices using vendor's private key and attaches production CSID stamp.</p></div></div>
+            <div class="module-feature"><span class="module-feature__icon">✦</span><div><div class="module-feature__title" data-i18n="moduleA.feat4Title">Base64 TLV QR Code Engine</div><p class="module-feature__desc" data-i18n="moduleA.feat4Desc">Encodes Seller Name, VAT, Timestamp, Amount, Hash, and Signature into compliant QR.</p></div></div>
+            <div class="module-feature"><span class="module-feature__icon">✦</span><div><div class="module-feature__title" data-i18n="moduleA.feat5Title">Dual Routing (B2B/B2C)</div><p class="module-feature__desc" data-i18n="moduleA.feat5Desc">B2B: Real-time mTLS clearance. B2C: Async 24h batch reporting. Automatic routing.</p></div></div>
+            <div class="module-feature"><span class="module-feature__icon">✦</span><div><div class="module-feature__title" data-i18n="moduleA.feat6Title">Dead Letter Queue & Retry</div><p class="module-feature__desc" data-i18n="moduleA.feat6Desc">Failed clearances go to DLQ with exponential backoff retry. Zero lost invoices.</p></div></div>
+          </div>
+        </div>
+        <div class="module-visual">
+          <img src="assets/images/zatca-engine-flow.jpg" alt="ZATCA Cryptographic E-Invoicing Flow — JSON to XML to Hash to Digital Signature to QR Code" width="640" height="360" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Module B -->
+  <section class="section module-section" style="background: rgba(0,212,170,0.02);">
+    <div class="container">
+      <div class="module-content reveal">
+        <div class="module-visual">
+          <img src="assets/images/whatsapp-invoice.jpg" alt="WhatsApp Invoice Message — Bilingual Arabic/English with Pay Now button" width="480" height="640" loading="lazy">
+        </div>
+        <div>
+          <div class="module-header">
+            <span class="module-header__tag" data-i18n="moduleB.tag">Module B</span>
+            <h2 data-i18n="moduleB.title">Meta WhatsApp Cloud API Engine</h2>
+          </div>
+          <div class="module-features-list">
+            <div class="module-feature"><span class="module-feature__icon">✦</span><div><div class="module-feature__title" data-i18n="moduleB.feat1Title">Bilingual Interactive Templates</div><p class="module-feature__desc" data-i18n="moduleB.feat1Desc">Pre-approved Arabic/English ZATCA message templates managed automatically.</p></div></div>
+            <div class="module-feature"><span class="module-feature__icon">✦</span><div><div class="module-feature__title" data-i18n="moduleB.feat2Title">Dynamic Payload Injection</div><p class="module-feature__desc" data-i18n="moduleB.feat2Desc">Injects QR preview, invoice totals, business name, and PDF URL into template parameters.</p></div></div>
+            <div class="module-feature"><span class="module-feature__icon">✦</span><div><div class="module-feature__title" data-i18n="moduleB.feat3Title">Click-to-Pay Buttons</div><p class="module-feature__desc" data-i18n="moduleB.feat3Desc">Embedded payment URLs for Moyasar/PayTabs with auto-mark invoices as PAID.</p></div></div>
+            <div class="module-feature"><span class="module-feature__icon">✦</span><div><div class="module-feature__title" data-i18n="moduleB.feat4Title">Real-time Delivery Webhooks</div><p class="module-feature__desc" data-i18n="moduleB.feat4Desc">Track SENT → DELIVERED → READ → FAILED status in real-time via Meta webhooks.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Module C -->
+  <section class="section module-section">
+    <div class="container">
+      <div class="module-content reveal">
+        <div>
+          <div class="module-header">
+            <span class="module-header__tag" data-i18n="moduleC.tag">Module C</span>
+            <h2 data-i18n="moduleC.title">White-Label Agency Management Portal</h2>
+          </div>
+          <div class="module-features-list">
+            <div class="module-feature"><span class="module-feature__icon">✦</span><div><div class="module-feature__title" data-i18n="moduleC.feat1Title">Custom Domain Mapping</div><p class="module-feature__desc" data-i18n="moduleC.feat1Desc">Route API calls through your subdomain: zatca-api.youragency.sa</p></div></div>
+            <div class="module-feature"><span class="module-feature__icon">✦</span><div><div class="module-feature__title" data-i18n="moduleC.feat2Title">Branded Templates & PDFs</div><p class="module-feature__desc" data-i18n="moduleC.feat2Desc">Customize WhatsApp headers, footers, and PDF themes with your branding.</p></div></div>
+            <div class="module-feature"><span class="module-feature__icon">✦</span><div><div class="module-feature__title" data-i18n="moduleC.feat3Title">Tenant API Key Management</div><p class="module-feature__desc" data-i18n="moduleC.feat3Desc">Create, revoke, and rate-limit client API keys from your dashboard.</p></div></div>
+            <div class="module-feature"><span class="module-feature__icon">✦</span><div><div class="module-feature__title" data-i18n="moduleC.feat4Title">Analytics Dashboard</div><p class="module-feature__desc" data-i18n="moduleC.feat4Desc">Monitor API usage, clearance rates, delivery stats, and billing per sub-tenant.</p></div></div>
+          </div>
+        </div>
+        <div class="module-visual" style="background: var(--bg-surface-solid); padding: 2rem; display: flex; align-items: center; justify-content: center; min-height: 300px;">
+          <div style="text-align:center;">
+            <div style="font-size:4rem; margin-bottom:1rem;">🏢</div>
+            <h3 class="text-gradient" style="font-size:1.5rem;">Agency Dashboard</h3>
+            <p style="color:var(--text-muted);font-size:0.85rem;margin-top:0.5rem;">Multi-tenant analytics & management portal</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Module D & E -->
+  <section class="section" style="background: rgba(0,212,170,0.02);">
+    <div class="container">
+      <div class="features-grid stagger-children">
+        <!-- Module D -->
+        <div class="glass-card">
+          <div class="module-header">
+            <span class="module-header__tag" data-i18n="moduleD.tag">Module D</span>
+          </div>
+          <h3 class="glass-card__title" data-i18n="moduleD.title" style="margin-bottom:1.2rem;">CSID Onboarding Automation</h3>
+          <div class="module-features-list">
+            <div class="module-feature"><span class="module-feature__icon">✦</span><div><div class="module-feature__title" data-i18n="moduleD.feat1Title">OTP-Based Compliance CSID</div><p class="module-feature__desc" data-i18n="moduleD.feat1Desc">Automated endpoint triggers OTP-based Compliance CSID acquisition.</p></div></div>
+            <div class="module-feature"><span class="module-feature__icon">✦</span><div><div class="module-feature__title" data-i18n="moduleD.feat2Title">Auto Compliance Checks</div><p class="module-feature__desc" data-i18n="moduleD.feat2Desc">Sends test standard/simplified invoices to validate compliance automatically.</p></div></div>
+            <div class="module-feature"><span class="module-feature__icon">✦</span><div><div class="module-feature__title" data-i18n="moduleD.feat3Title">Production CSID Vaulting</div><p class="module-feature__desc" data-i18n="moduleD.feat3Desc">Fetches and encrypts Production CSID keys with AES-256 in secure vault.</p></div></div>
+          </div>
+        </div>
+
+        <!-- Module E -->
+        <div class="glass-card">
+          <div class="module-header">
+            <span class="module-header__tag" data-i18n="moduleE.tag">Module E</span>
+          </div>
+          <h3 class="glass-card__title" data-i18n="moduleE.title" style="margin-bottom:1.2rem;">Billing & Monetization</h3>
+          <div class="module-features-list">
+            <div class="module-feature"><span class="module-feature__icon">✦</span><div><div class="module-feature__title" data-i18n="moduleE.feat1Title">Stripe/Paddle Integration</div><p class="module-feature__desc" data-i18n="moduleE.feat1Desc">Tier-based monthly SaaS subscriptions with automated billing.</p></div></div>
+            <div class="module-feature"><span class="module-feature__icon">✦</span><div><div class="module-feature__title" data-i18n="moduleE.feat2Title">Pay-per-Invoice Usage</div><p class="module-feature__desc" data-i18n="moduleE.feat2Desc">Metered billing based on actual API call and invoice volume.</p></div></div>
+            <div class="module-feature"><span class="module-feature__icon">✦</span><div><div class="module-feature__title" data-i18n="moduleE.feat3Title">Prepaid Credits Wallet</div><p class="module-feature__desc" data-i18n="moduleE.feat3Desc">Purchase wallet credits to fund WhatsApp conversations and API charges.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Security Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__badge">🔒 Security</span>
+        <h2 class="section__title" data-i18n="security.title">Enterprise-Grade Security & Compliance</h2>
+      </div>
+
+      <div class="features-grid features-grid--3 stagger-children">
+        <div class="glass-card" style="text-align:center;">
+          <div class="glass-card__icon" style="margin-inline:auto;">🌍</div>
+          <h4 class="glass-card__title" data-i18n="security1">AWS Riyadh (me-central-1) data residency</h4>
+        </div>
+        <div class="glass-card" style="text-align:center;">
+          <div class="glass-card__icon" style="margin-inline:auto;">🔐</div>
+          <h4 class="glass-card__title" data-i18n="security2">AES-256 encryption at rest for private keys</h4>
+        </div>
+        <div class="glass-card" style="text-align:center;">
+          <div class="glass-card__icon" style="margin-inline:auto;">📋</div>
+          <h4 class="glass-card__title" data-i18n="security3">CCRF compliant</h4>
+        </div>
+        <div class="glass-card" style="text-align:center;">
+          <div class="glass-card__icon" style="margin-inline:auto;">🗄️</div>
+          <h4 class="glass-card__title" data-i18n="security4">6-year ZATCA data archiving</h4>
+        </div>
+        <div class="glass-card" style="text-align:center;">
+          <div class="glass-card__icon" style="margin-inline:auto;">⚡</div>
+          <h4 class="glass-card__title" data-i18n="security5">99.95% uptime SLA (multi-AZ)</h4>
+        </div>
+        <div class="glass-card" style="text-align:center;">
+          <div class="glass-card__icon" style="margin-inline:auto;">✅</div>
+          <h4 class="glass-card__title" data-i18n="security6">Zero non-compliance failures</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-banner reveal-scale">
+        <h2 class="section__title" data-i18n="cta.title">Ready to Automate Your ZATCA Compliance?</h2>
+        <p data-i18n="cta.subtitle">Join hundreds of Saudi businesses already using our ZATCA + WhatsApp engine.</p>
+        <div class="hero__ctas">
+          <a href="demo.html" class="btn btn--primary btn--large" data-i18n="cta.primary">Start Free Trial</a>
+          <a href="contact.html" class="btn btn--outline btn--large" data-i18n="cta.secondary">Talk to Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="index.html" class="navbar__logo"><div class="navbar__logo-icon">Z</div><span>ZATCA <span class="text-gradient">Engine</span></span></a>
+          <p class="footer__brand-desc" data-i18n="footer.desc">The ultimate ZATCA Phase 2 E-Invoicing & WhatsApp Engine built for Saudi Arabia's digital future.</p>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="LinkedIn">in</a>
+            <a href="#" class="footer__social-link" aria-label="Twitter/X">𝕏</a>
+            <a href="#" class="footer__social-link" aria-label="WhatsApp">💬</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__heading" data-i18n="footer.product">Product</h4>
+          <a href="features.html" class="footer__link">Features</a>
+          <a href="pricing.html" class="footer__link">Pricing</a>
+          <a href="demo.html" class="footer__link">Demo</a>
+        </div>
+        <div>
+          <h4 class="footer__heading" data-i18n="footer.company">Company</h4>
+          <a href="about.html" class="footer__link">About</a>
+          <a href="contact.html" class="footer__link">Contact</a>
+          <a href="blog.html" class="footer__link">Blog</a>
+        </div>
+        <div>
+          <h4 class="footer__heading" data-i18n="footer.resources">Resources</h4>
+          <a href="#" class="footer__link">API Docs</a>
+          <a href="#" class="footer__link">Status Page</a>
+          <a href="#" class="footer__link">Support</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright" data-i18n="footer.copyright">© 2026 ZATCA Engine. Built for Saudi Arabia's Digital Future.</p>
+        <div class="footer__legal">
+          <a href="#" data-i18n="footer.privacy">Privacy Policy</a>
+          <a href="#" data-i18n="footer.terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

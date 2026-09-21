@@ -1,0 +1,18 @@
+{
+  "nav.home": "الرئيسية",
+  "nav.features": "المميزات",
+  "nav.pricing": "الأسعار",
+  "nav.demo": "التجربة",
+  "nav.dashboard": "لوحة التحكم",
+  "hero.title": "تمكين نمو الأعمال الذكية",
+  "hero.subtitle": "المحرك النهائي لنظام الفوترة الإلكترونية (ZATCA) للشركات السعودية.",
+  "hero.getStarted": "ابدأ الآن",
+  "hero.bookDemo": "احجز عرضاً تجريبياً",
+  "features.title": "لماذا تختار نومو إي آر بي؟",
+  "features.zatca.title": "✅ جاهز للمرحلة الثانية من ZATCA",
+  "features.zatca.desc": "امتثال بنقرة واحدة مع UBL 2.1 XML و Base64 TLV QR Codes.",
+  "features.wa.title": "📱 أتمتة الواتساب",
+  "features.wa.desc": "أرسل الفواتير مباشرة لعملائك عبر الواتساب فوراً.",
+  "features.agency.title": "🏢 وكالات متعددة المستأجرين",
+  "features.agency.desc": "بوابة مخصصة لوكالات تقنية المعلومات لتطبيق الامتثال في 15 دقيقة."
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo — ZATCA Engine | Try Our Sandbox in Under 15 Minutes</title>
+  <meta name="description" content="Get test credentials and explore the full ZATCA + WhatsApp pipeline. Sandbox to production in under 15 minutes. No credit card required.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar"><div class="navbar__inner"><a href="index.html" class="navbar__logo"><div class="navbar__logo-icon">Z</div><span>ZATCA <span class="text-gradient">Engine</span></span></a><div class="navbar__links"><a href="index.html" class="navbar__link" data-i18n="nav.home">Home</a><a href="features.html" class="navbar__link" data-i18n="nav.features">Features</a><a href="pricing.html" class="navbar__link" data-i18n="nav.pricing">Pricing</a><a href="demo.html" class="navbar__link active" data-i18n="nav.demo">Demo</a><a href="about.html" class="navbar__link" data-i18n="nav.about">About</a><a href="contact.html" class="navbar__link" data-i18n="nav.contact">Contact</a><a href="blog.html" class="navbar__link" data-i18n="nav.blog">Blog</a></div><div class="navbar__actions"><button class="lang-toggle" data-action="toggle-lang" data-i18n="nav.langToggle">🌐 العربية</button><a href="demo.html" class="btn btn--primary btn--small" data-i18n="nav.getStarted">Get Started</a></div><div class="navbar__hamburger" aria-label="Menu"><span></span><span></span><span></span></div></div></nav>
+  <div class="mobile-nav"><a href="index.html" class="mobile-nav__link">Home</a><a href="features.html" class="mobile-nav__link">Features</a><a href="pricing.html" class="mobile-nav__link">Pricing</a><a href="demo.html" class="mobile-nav__link">Demo</a><a href="about.html" class="mobile-nav__link">About</a><a href="contact.html" class="mobile-nav__link">Contact</a><a href="blog.html" class="mobile-nav__link">Blog</a><button class="btn btn--primary" data-action="toggle-lang">🌐 العربية</button></div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="section__badge reveal" data-i18n="demo.badge">🧪 Try It Live</span>
+      <h1 class="reveal" data-i18n="demo.title">Go from Sandbox to Production in Under 15 Minutes</h1>
+      <p class="reveal" data-i18n="demo.subtitle">Get test credentials and explore our full ZATCA + WhatsApp pipeline.</p>
+    </div>
+  </section>
+
+  <!-- Demo Form + Preview -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Request Form -->
+        <div class="reveal-left">
+          <div class="glass-card">
+            <h2 style="margin-bottom:1.5rem;" data-i18n="demo.formTitle">Request Sandbox Access</h2>
+            <form id="demo-form">
+              <div class="form-group">
+                <label data-i18n="demo.formName">Full Name</label>
+                <input type="text" class="form-input" data-i18n="demo.formName" placeholder="Full Name" required>
+              </div>
+              <div class="form-group">
+                <label data-i18n="demo.formEmail">Business Email</label>
+                <input type="email" class="form-input" data-i18n="demo.formEmail" placeholder="Business Email" required>
+              </div>
+              <div class="form-group">
+                <label data-i18n="demo.formCompany">Company Name</label>
+                <input type="text" class="form-input" data-i18n="demo.formCompany" placeholder="Company Name" required>
+              </div>
+              <div class="form-group">
+                <label data-i18n="demo.formRole">Your Role</label>
+                <select class="form-input" required>
+                  <option value="" data-i18n="demo.formRoleOpt1">Select your role</option>
+                  <option value="agency" data-i18n="demo.formRoleOpt2">Agency / Reseller</option>
+                  <option value="developer" data-i18n="demo.formRoleOpt3">Developer / Integrator</option>
+                  <option value="business" data-i18n="demo.formRoleOpt4">Business Owner</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn--primary" style="width:100%;" data-i18n="demo.formCta">Get Test Credentials</button>
+              <p style="text-align:center;margin-top:1rem;font-size:0.82rem;color:var(--text-muted);" data-i18n="demo.formNote">No credit card required. Full API access for 14 days.</p>
+            </form>
+          </div>
+        </div>
+
+        <!-- API Preview -->
+        <div class="reveal-right">
+          <h3 style="margin-bottom:1rem;" data-i18n="demo.step1Title">JSON API Payload</h3>
+          <p style="color:var(--text-secondary);margin-bottom:1.5rem;font-size:0.92rem;" data-i18n="demo.step1Desc">Send a single POST request with your invoice data in JSON format. Our API handles everything else.</p>
+          <div class="code-block">
+            <div class="code-block__header">
+              <div class="code-block__dots"><span class="code-block__dot code-block__dot--red"></span><span class="code-block__dot code-block__dot--yellow"></span><span class="code-block__dot code-block__dot--green"></span></div>
+              <span class="code-block__lang">JSON — POST /api/v1/invoices/zatca-whatsapp</span>
+            </div>
+            <pre class="code-block__body"><span class="code-bracket">{</span>
+  <span class="code-key">"seller"</span>: <span class="code-bracket">{</span>
+    <span class="code-key">"name"</span>: <span class="code-string">"Tech Solutions LLC"</span>,
+    <span class="code-key">"vat"</span>: <span class="code-string">"300000000000003"</span>,
+    <span class="code-key">"crn"</span>: <span class="code-string">"1234567890"</span>
+  <span class="code-bracket">}</span>,
+  <span class="code-key">"buyer"</span>: <span class="code-bracket">{</span>
+    <span class="code-key">"name"</span>: <span class="code-string">"Client Corp"</span>,
+    <span class="code-key">"crn"</span>: <span class="code-string">"0987654321"</span>
+  <span class="code-bracket">}</span>,
+  <span class="code-key">"items"</span>: <span class="code-bracket">[</span>
+    <span class="code-bracket">{</span>
+      <span class="code-key">"name"</span>: <span class="code-string">"IT Consulting"</span>,
+      <span class="code-key">"quantity"</span>: <span class="code-number">10</span>,
+      <span class="code-key">"unit_price"</span>: <span class="code-number">500.00</span>,
+      <span class="code-key">"vat_percent"</span>: <span class="code-number">15</span>
+    <span class="code-bracket">}</span>
+  <span class="code-bracket">]</span>,
+  <span class="code-key">"whatsapp"</span>: <span class="code-bracket">{</span>
+    <span class="code-key">"to"</span>: <span class="code-string">"+966501234567"</span>,
+    <span class="code-key">"template"</span>: <span class="code-string">"invoice_ar_en"</span>
+  <span class="code-bracket">}</span>,
+  <span class="code-key">"payment"</span>: <span class="code-bracket">{</span>
+    <span class="code-key">"gateway"</span>: <span class="code-string">"moyasar"</span>,
+    <span class="code-key">"callback_url"</span>: <span class="code-string">"https://yourapp.sa/webhook"</span>
+  <span class="code-bracket">}</span>
+<span class="code-bracket">}</span></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's Included -->
+  <section class="section" style="background: rgba(0,212,170,0.02);">
+    <div class="container">
+      <div class="section__header reveal">
+        <h2 class="section__title" data-i18n="demo.sandboxTitle">What's Included in Sandbox</h2>
+      </div>
+      <div class="features-grid features-grid--3 stagger-children">
+        <div class="glass-card" style="text-align:center;"><div class="glass-card__icon" style="margin-inline:auto;">🧪</div><h4 class="glass-card__title" data-i18n="demo.sandbox1">Full ZATCA test portal integration</h4></div>
+        <div class="glass-card" style="text-align:center;"><div class="glass-card__icon" style="margin-inline:auto;">⚡</div><h4 class="glass-card__title" data-i18n="demo.sandbox2">API speed testing (<300ms latency)</h4></div>
+        <div class="glass-card" style="text-align:center;"><div class="glass-card__icon" style="margin-inline:auto;">📱</div><h4 class="glass-card__title" data-i18n="demo.sandbox3">WhatsApp template preview</h4></div>
+        <div class="glass-card" style="text-align:center;"><div class="glass-card__icon" style="margin-inline:auto;">📄</div><h4 class="glass-card__title" data-i18n="demo.sandbox4">B2B and B2C invoice flows</h4></div>
+        <div class="glass-card" style="text-align:center;"><div class="glass-card__icon" style="margin-inline:auto;">💻</div><h4 class="glass-card__title" data-i18n="demo.sandbox5">Code examples (Node.js, Python, PHP, cURL)</h4></div>
+        <div class="glass-card" style="text-align:center;"><div class="glass-card__icon" style="margin-inline:auto;">🔑</div><h4 class="glass-card__title">Automated CSID test pipeline</h4></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section"><div class="container"><div class="cta-banner reveal-scale"><h2 class="section__title" data-i18n="cta.title">Ready to Automate Your ZATCA Compliance?</h2><p data-i18n="cta.subtitle">Join hundreds of Saudi businesses already using our ZATCA + WhatsApp engine.</p><div class="hero__ctas"><a href="#" class="btn btn--primary btn--large" data-i18n="cta.primary">Start Free Trial</a><a href="contact.html" class="btn btn--outline btn--large" data-i18n="cta.secondary">Talk to Sales</a></div></div></div></section>
+
+  <!-- Footer -->
+  <footer class="footer"><div class="container"><div class="footer__grid"><div><a href="index.html" class="navbar__logo"><div class="navbar__logo-icon">Z</div><span>ZATCA <span class="text-gradient">Engine</span></span></a><p class="footer__brand-desc" data-i18n="footer.desc">The ultimate ZATCA Phase 2 E-Invoicing & WhatsApp Engine.</p></div><div><h4 class="footer__heading">Product</h4><a href="features.html" class="footer__link">Features</a><a href="pricing.html" class="footer__link">Pricing</a><a href="demo.html" class="footer__link">Demo</a></div><div><h4 class="footer__heading">Company</h4><a href="about.html" class="footer__link">About</a><a href="contact.html" class="footer__link">Contact</a><a href="blog.html" class="footer__link">Blog</a></div><div><h4 class="footer__heading">Resources</h4><a href="#" class="footer__link">API Docs</a><a href="#" class="footer__link">Support</a></div></div><div class="footer__bottom"><p class="footer__copyright" data-i18n="footer.copyright">© 2026 ZATCA Engine.</p><div class="footer__legal"><a href="#">Privacy</a><a href="#">Terms</a></div></div></div></footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
