@@ -12,10 +12,10 @@ abstract class ClientApi {
   Future<List<ClientModel>> getClients();
 
   @POST('/clients')
-  Future<ClientModel> createClient(@Body() Map<String, dynamic> clientData);
+  Future<ClientModel> createClient(@Body() Map<String, dynamic> body);
 
   @PUT('/clients/{id}')
-  Future<ClientModel> updateClient(@Path('id') String id, @Body() Map<String, dynamic> clientData);
+  Future<ClientModel> updateClient(@Path('id') String id, @Body() Map<String, dynamic> body);
 
   @DELETE('/clients/{id}')
   Future<void> deleteClient(@Path('id') String id);

@@ -7,7 +7,7 @@ part 'auth_response.g.dart';
 class AuthResponse with _$AuthResponse {
   const factory AuthResponse({
     required String accessToken,
-    required String refreshToken,
+    String? refreshToken,
   }) = _AuthResponse;
 
   factory AuthResponse.fromJson(Map<String, dynamic> json) => _$AuthResponseFromJson(json);

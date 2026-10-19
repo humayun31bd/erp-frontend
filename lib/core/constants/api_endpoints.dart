@@ -1,9 +1,10 @@
 class ApiEndpoints {
-  ApiEndpoints._();
+  static const String baseUrl = 'http://localhost:3000/api/v1'; // Local Dev URL
 
-  static const String baseUrl = 'https://api.numouerp.com/api/v1'; // API base url
-  
   static const String login = '/auth/login';
+  static const String register = '/auth/register';
+  static const String refresh = '/auth/refresh';
+  
   static const String invoices = '/invoices';
-  // Other endpoints here...
+  static const String clients = '/clients';
 }

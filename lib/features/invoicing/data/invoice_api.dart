@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
-import '../domain/invoice_model.dart';
+import '../domain/invoice_responses.dart';
 
 part 'invoice_api.g.dart';
 
@@ -9,11 +9,17 @@ abstract class InvoiceApi {
   factory InvoiceApi(Dio dio, {String baseUrl}) = _InvoiceApi;
 
   @GET('/invoices')
-  Future<List<InvoiceModel>> getInvoices();
+  Future<InvoiceListResponse> getInvoices({@Query('clientId') String? clientId});
 
   @POST('/invoices')
-  Future<InvoiceModel> createInvoice(@Body() Map<String, dynamic> invoiceData);
+  Future<CreateInvoiceResponse> createInvoice(@Body() Map<String, dynamic> invoiceData);
+
+  @POST('/invoices/{id}/credit-note')
+  Future<CreateInvoiceResponse> createCreditNote(@Path('id') String id, @Body() Map<String, dynamic> invoiceData);
+
+  @POST('/invoices/{id}/debit-note')
+  Future<CreateInvoiceResponse> createDebitNote(@Path('id') String id, @Body() Map<String, dynamic> invoiceData);
 
   @GET('/invoices/{id}')
-  Future<InvoiceModel> getInvoiceById(@Path('id') String id);
+  Future<InvoiceDetailResponse> getInvoiceById(@Path('id') String id);
 }

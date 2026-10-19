@@ -1,91 +1,163 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import '../../../../shared/widgets/responsive_builder.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../../core/utils/sar_formatter.dart';
+import '../providers/dashboard_provider.dart';
 import 'widgets/kpi_card.dart';
-import 'widgets/revenue_chart.dart';
-import '../../../../core/theme/app_colors.dart';
+import 'widgets/recent_activity_list.dart';
+import '../../../shared/widgets/fade_slide_animation.dart';
+import '../../../core/l10n/app_localizations.dart';
 
-class DashboardScreen extends StatelessWidget {
+class DashboardScreen extends ConsumerWidget {
   const DashboardScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final isArabic = Localizations.localeOf(context).languageCode == 'ar';
-    final crossAxisCount = ResponsiveBuilder.isDesktop(context) ? 4 : (ResponsiveBuilder.isTablet(context) ? 2 : 1);
+  Widget build(BuildContext context, WidgetRef ref) {
+    final dashboardState = ref.watch(dashboardStatsProvider);
+    final l10n = AppLocalizations.of(context)!;
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(isArabic ? 'لوحة التحكم' : 'Dashboard'),
+        title: Text(l10n.dashboardTitle, style: const TextStyle(fontWeight: FontWeight.bold)),
         actions: [
           IconButton(
-            icon: const Icon(Icons.notifications_outlined),
-            onPressed: () {},
+            icon: const Icon(Icons.refresh),
+            tooltip: l10n.refreshDashboard,
+            onPressed: () => ref.refresh(dashboardStatsProvider),
           ),
-          const SizedBox(width: 16),
+          const SizedBox(width: 8),
         ],
       ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(24.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              isArabic ? 'مرحباً بعودتك 👋' : 'Welcome back 👋',
-              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                    fontWeight: FontWeight.bold,
-                  ),
-            ).animate().fadeIn().slideY(begin: 0.2, end: 0),
-            
-            const SizedBox(height: 24),
-            
-            // KPI Grid
-            GridView.count(
-              crossAxisCount: crossAxisCount,
-              crossAxisSpacing: 16,
-              mainAxisSpacing: 16,
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              childAspectRatio: 2,
+      body: dashboardState.when(
+        data: (stats) {
+          return SingleChildScrollView(
+            padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 24.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                KpiCard(
-                  title: isArabic ? 'إجمالي الإيرادات' : 'Total Revenue',
-                  value: 'SAR 45,231.00',
-                  icon: Icons.account_balance_wallet_outlined,
-                  color: AppColors.primary,
-                  trend: '+12.5%',
-                ),
-                KpiCard(
-                  title: isArabic ? 'فواتير زاتكا' : 'ZATCA Invoices',
-                  value: '1,284',
-                  icon: Icons.receipt_long_outlined,
-                  color: AppColors.success,
-                  trend: '+5.2%',
-                ),
-                KpiCard(
-                  title: isArabic ? 'العملاء' : 'Total Clients',
-                  value: '342',
-                  icon: Icons.people_outline,
-                  color: AppColors.accent,
-                ),
-                KpiCard(
-                  title: isArabic ? 'متأخرة' : 'Overdue',
-                  value: 'SAR 2,100',
-                  icon: Icons.warning_amber_rounded,
-                  color: AppColors.danger,
-                  trend: '-2.1%',
-                  isTrendUp: false,
-                ),
-              ].animate(interval: 100.ms).fadeIn().slideY(begin: 0.2, end: 0),
-            ),
+                if (!stats.isZatcaHealthy)
+                  Container(
+                    margin: const EdgeInsets.only(bottom: 24),
+                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                    decoration: BoxDecoration(
+                      color: Colors.red.withValues(alpha: 0.05),
+                      borderRadius: BorderRadius.circular(12),
+                      border: Border.all(color: Colors.red.withValues(alpha: 0.3)),
+                    ),
+                    child: Row(
+                      children: [
+                        const Icon(Icons.warning_amber_rounded, color: Colors.red),
+                        const SizedBox(width: 12),
+                        Text(l10n.zatcaOffline, style: const TextStyle(color: Colors.red, fontWeight: FontWeight.w500)),
+                      ],
+                    ),
+                  ),
+                
+                // KPI Cards
+                LayoutBuilder(
+                  builder: (context, constraints) {
+                    final isDesktop = constraints.maxWidth > 800;
+                    
+                    final cards = [
+                      KpiCard(
+                        title: l10n.totalRevenue, // Total Revenue (Accrual)
+                        value: SarFormatter.format(stats.totalRevenue),
+                        icon: Icons.account_balance_wallet_outlined,
+                        color: Theme.of(context).primaryColor,
+                        trend: '+12.5%',
+                        isTrendUp: true,
+                      ),
+                      KpiCard(
+                        title: 'Cash on Hand', // Total Cash on Hand (Real)
+                        value: SarFormatter.format(stats.totalCashOnHand),
+                        icon: Icons.attach_money_rounded,
+                        color: const Color(0xFF10B981), // Emerald green
+                        trend: '+8.3%',
+                        isTrendUp: true,
+                      ),
+                      KpiCard(
+                        title: l10n.clearedInvoices,
+                        value: stats.invoicesCleared.toString(),
+                        icon: Icons.receipt_long_outlined,
+                        color: const Color(0xFF3B82F6),
+                        trend: '+5.2%',
+                        isTrendUp: true,
+                      ),
+                      KpiCard(
+                        title: l10n.overdueAmount,
+                        value: SarFormatter.format(stats.overdueAmount),
+                        icon: Icons.warning_amber_rounded,
+                        color: const Color(0xFFF59E0B),
+                        trend: '-2.1%',
+                        isTrendUp: false,
+                      ),
+                    ];
 
-            const SizedBox(height: 24),
-
-            // Charts & Lists
-            SizedBox(
-              height: 400,
-              child: const RevenueChart().animate().fadeIn(delay: 400.ms),
+                    if (isDesktop) {
+                      return Row(
+                        children: [
+                          Expanded(child: FadeSlideAnimation(delay: const Duration(milliseconds: 100), child: cards[0])),
+                          const SizedBox(width: 24),
+                          Expanded(child: FadeSlideAnimation(delay: const Duration(milliseconds: 150), child: cards[1])),
+                          const SizedBox(width: 24),
+                          Expanded(child: FadeSlideAnimation(delay: const Duration(milliseconds: 200), child: cards[2])),
+                          const SizedBox(width: 24),
+                          Expanded(child: FadeSlideAnimation(delay: const Duration(milliseconds: 250), child: cards[3])),
+                        ],
+                      );
+                    } else {
+                      return Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          FadeSlideAnimation(delay: const Duration(milliseconds: 100), child: cards[0]),
+                          const SizedBox(height: 16),
+                          FadeSlideAnimation(delay: const Duration(milliseconds: 150), child: cards[1]),
+                          const SizedBox(height: 16),
+                          FadeSlideAnimation(delay: const Duration(milliseconds: 200), child: cards[2]),
+                          const SizedBox(height: 16),
+                          FadeSlideAnimation(delay: const Duration(milliseconds: 250), child: cards[3]),
+                        ],
+                      );
+                    }
+                  },
+                ),
+                
+                const SizedBox(height: 48),
+                
+                FadeSlideAnimation(
+                  delay: const Duration(milliseconds: 400),
+                  child: Text(
+                    l10n.recentActivity,
+                    style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Color(0xFF0F172A)),
+                  ),
+                ),
+                const SizedBox(height: 24),
+                
+                FadeSlideAnimation(
+                  delay: const Duration(milliseconds: 500),
+                  child: RecentActivityList(activities: stats.recentActivity),
+                ),
+              ],
             ),
-          ],
+          );
+        },
+        loading: () => const Center(child: CircularProgressIndicator()),
+        error: (err, stack) => Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Icon(Icons.error_outline, color: Colors.red, size: 64),
+              const SizedBox(height: 16),
+              Text(l10n.failedToLoadDashboard, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+              const SizedBox(height: 8),
+              Text(err.toString(), textAlign: TextAlign.center, style: const TextStyle(color: Colors.grey)),
+              const SizedBox(height: 24),
+              ElevatedButton.icon(
+                icon: const Icon(Icons.refresh),
+                label: Text(l10n.retry),
+                onPressed: () => ref.refresh(dashboardStatsProvider),
+              ),
+            ],
+          ),
         ),
       ),
     );

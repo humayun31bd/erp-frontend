@@ -13,7 +13,7 @@ class RevenueChart extends StatelessWidget {
       elevation: 0,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16),
-        side: BorderSide(color: Theme.of(context).colorScheme.outlineVariant.withOpacity(0.5)),
+        side: BorderSide(color: Theme.of(context).colorScheme.outlineVariant.withValues(alpha: 0.5)),
       ),
       child: Padding(
         padding: const EdgeInsets.all(24.0),
@@ -36,7 +36,7 @@ class RevenueChart extends StatelessWidget {
                     horizontalInterval: 1000,
                     getDrawingHorizontalLine: (value) {
                       return FlLine(
-                        color: Theme.of(context).colorScheme.outlineVariant.withOpacity(0.2),
+                        color: Theme.of(context).colorScheme.outlineVariant.withValues(alpha: 0.2),
                         strokeWidth: 1,
                       );
                     },
@@ -90,7 +90,7 @@ class RevenueChart extends StatelessWidget {
                       dotData: const FlDotData(show: false),
                       belowBarData: BarAreaData(
                         show: true,
-                        color: AppColors.primary.withOpacity(0.1),
+                        color: AppColors.primary.withValues(alpha: 0.1),
                       ),
                     ),
                   ],

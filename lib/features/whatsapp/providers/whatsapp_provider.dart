@@ -1,44 +1,49 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../../core/network/dio_client.dart';
+import '../../../core/network/dio_client.dart';
 import '../data/whatsapp_api.dart';
 
-final whatsappApiProvider = Provider<WhatsappApi>((ref) {
+final whatsappApiProvider = Provider<WhatsAppApi>((ref) {
   final dio = ref.watch(dioProvider);
-  return WhatsappApi(dio);
+  return WhatsAppApi(dio);
 });
 
-class WhatsappActionNotifier extends StateNotifier<AsyncValue<void>> {
-  final WhatsappApi _api;
+class WhatsAppSendState {
+  final bool isLoading;
+  final String? error;
+  final bool success;
 
-  WhatsappActionNotifier(this._api) : super(const AsyncValue.data(null));
+  WhatsAppSendState({this.isLoading = false, this.error, this.success = false});
+}
 
-  Future<void> sendInvoice({required String invoiceId, required String phone}) async {
-    state = const AsyncValue.loading();
+class WhatsAppSendNotifier extends StateNotifier<WhatsAppSendState> {
+  final WhatsAppApi _api;
+
+  WhatsAppSendNotifier(this._api) : super(WhatsAppSendState());
+
+  Future<void> sendInvoice(String invoiceId, String phoneNumber) async {
+    state = WhatsAppSendState(isLoading: true);
     try {
-      await _api.sendInvoice({
+      final response = await _api.sendInvoice({
         'invoiceId': invoiceId,
-        'phone': phone,
+        'phoneNumber': phoneNumber,
+        'templateName': 'invoice_delivery_v1',
       });
-      state = const AsyncValue.data(null);
-    } catch (e, st) {
-      state = AsyncValue.error(e, st);
+
+      if (response.success) {
+        state = WhatsAppSendState(isLoading: false, success: true);
+      } else {
+        state = WhatsAppSendState(isLoading: false, error: response.error ?? 'Unknown error');
+      }
+    } catch (e) {
+      state = WhatsAppSendState(isLoading: false, error: e.toString());
     }
   }
 
-  Future<void> triggerDemo({required String phone}) async {
-    state = const AsyncValue.loading();
-    try {
-      await _api.triggerDemo({
-        'phone': phone,
-      });
-      state = const AsyncValue.data(null);
-    } catch (e, st) {
-      state = AsyncValue.error(e, st);
-    }
+  void reset() {
+    state = WhatsAppSendState();
   }
 }
 
-final whatsappActionProvider = StateNotifierProvider<WhatsappActionNotifier, AsyncValue<void>>((ref) {
-  final api = ref.watch(whatsappApiProvider);
-  return WhatsappActionNotifier(api);
+final whatsappSendProvider = StateNotifierProvider.autoDispose<WhatsAppSendNotifier, WhatsAppSendState>((ref) {
+  return WhatsAppSendNotifier(ref.watch(whatsappApiProvider));
 });

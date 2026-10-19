@@ -1,6 +1,6 @@
 {
   "@@locale": "ar",
-  "appName": "نومو إي آر بي",
+  "appName": "Intelligent ERP",
   "dashboard": "لوحة التحكم",
   "invoices": "الفواتير",
   "createInvoice": "إنشاء فاتورة",
@@ -12,5 +12,231 @@
         "type": "String"
       }
     }
-  }
+  },
+  "login": "تسجيل الدخول",
+  "phone": "رقم الهاتف",
+  "password": "كلمة المرور",
+  "loginButtonText": "دخول",
+  "loginError": "فشل المصادقة. يرجى التحقق من بياناتك.",
+  "welcomeBack": "مرحباً بعودتك",
+  "customers": "العملاء",
+  "suppliers": "الموردين",
+  "purchases": "المشتريات",
+  "cashBook": "دفتر النقدية",
+  "inventory": "المخزون",
+  "posCashier": "نقطة البيع",
+  "posDashboard": "لوحة القيادة لنقطة البيع",
+  "aiCopilot": "المساعد الذكي",
+  "whatsappLogs": "سجلات الواتساب",
+  "payments": "المدفوعات",
+  "reports": "التقارير",
+  "agencyPortal": "بوابة الوكالة",
+  "settings": "الإعدادات",
+  "languageSettings": "إعدادات اللغة",
+  "labelKey": "مفتاح التسمية",
+  "englishValue": "القيمة بالإنجليزية",
+  "arabicValue": "القيمة بالعربية",
+  "actions": "إجراءات",
+  "update": "تحديث",
+  "save": "حفظ",
+  "cancel": "إلغاء",
+  "manageBranches": "إدارة الفروع",
+  "addBranch": "إضافة فرع",
+  "branchName": "اسم الفرع",
+  "branchLocation": "الموقع",
+  "edit": "تعديل",
+  "delete": "حذف",
+  "logout": "تسجيل الخروج",
+  "changeLanguage": "تغيير اللغة",
+  "english": "English",
+  "arabic": "العربية",
+  "aiAndLogs": "الذكاء الاصطناعي والسجلات",
+  "management": "الإدارة",
+  "expandMenu": "توسيع القائمة",
+  "collapseMenu": "طي القائمة",
+  
+  "tenants": "العملاء",
+  "marketingPlans": "خطط التسويق",
+  "noClientsFound": "لا يوجد عملاء. قم بإضافة عميل جديد.",
+  "addTenant": "إضافة عميل",
+  "editPlan": "تعديل الخطة",
+  "noOfBranches": "عدد الفروع (1- لغير محدود)",
+  "noOfCounters": "عدد نقاط البيع (1- لغير محدود)",
+  "invoicesPerMonth": "عدد الفواتير شهرياً (1- لغير محدود)",
+  "planUpdated": "تم التحديث",
+  "branches": "الفروع",
+  "counters": "نقاط البيع",
+  "invoicesMo": "فواتير / شهر",
+  "unlimited": "غير محدود",
+  "dashboardTitle": "لوحة القيادة",
+  "refreshDashboard": "تحديث اللوحة",
+  "zatcaOffline": "محرك هيئة الزكاة غير متصل أو لا يمكن الوصول إليه حالياً.",
+  "totalRevenue": "إجمالي الإيرادات",
+  "clearedInvoices": "الفواتير المعتمدة",
+  "overdueAmount": "المبالغ المتأخرة",
+  "recentActivity": "النشاط الأخير",
+  "failedToLoadDashboard": "فشل تحميل لوحة القيادة",
+  "retry": "إعادة المحاولة",
+  
+  "posDashboard": "لوحة نقاط البيع",
+  "quickActions": "إجراءات سريعة",
+  "salesInvoice": "فاتورة مبيعات",
+  "purchaseOrder": "أمر شراء",
+  "shipments": "الشحنات",
+  "paymentReceipts": "الدفع والإيصالات",
+  "expenses": "المصروفات",
+  "customer": "العميل",
+  "vendor": "المورد",
+  "receiptsSettings": "إعدادات الإيصالات",
+  "summary": "ملخص",
+  "salesOrder": "أمر مبيعات",
+  "cashLedger": "دفتر النقدية",
+  "more": "المزيد...",
+  "configurationSettings": "الإعدادات والتهيئة",
+  "enableRestaurantMode": "تفعيل وضع المطعم",
+  "currencyConfiguration": "إعدادات العملة",
+  "lowStockProducts": "المنتجات منخفضة المخزون",
+  "printerSettings": "إعدادات الطابعة",
+  "contactUs": "اتصل بنا",
+  "salesReporting": "المبيعات والتقارير",
+  "revenueReport": "تقرير الإيرادات",
+  "topProductsRevenue": "أفضل المنتجات حسب الإيرادات",
+  "inventoryReport": "تقرير المخزون",
+  "lowStockAlerts": "تنبيهات المخزون المنخفض",
+  "noSalesData": "لا توجد بيانات مبيعات",
+  "sold": "تم بيعه",
+  "stockLevelsGood": "مستويات المخزون جيدة",
+  "dateSearch": "البحث بالتاريخ",
+  
+  "posTerminal": "نقطة البيع",
+  "session": "الجلسة",
+  "onlineSyncing": "متصل ومتزامن",
+  "searchProductHint": "امسح الباركود أو ابحث عن منتج (مثلاً برمجيات)...",
+  "item": "العنصر",
+  "qty": "الكمية",
+  "price": "السعر",
+  "discount": "الخصم",
+  "total": "الإجمالي",
+  "cartIsEmpty": "السلة فارغة",
+  "scanToAdd": "امسح باركود أو ابحث لإضافة عناصر",
+  "baseUnit": "الوحدة الأساسية",
+  "addPurchaseInvoice": "إضافة فاتورة مشتريات",
+  "noPurchasesFound": "لا توجد مشتريات.",
+  "supplierId": "معرف المورد",
+  "errorPrefix": "حدث خطأ",
+  "walkInCustomer": "عميل نقدي",
+  "addAtLeastOneItem": "يرجى إضافة عنصر واحد على الأقل",
+  "splitPaymentCredit": "تقسيم الدفع / آجل",
+  "totalDue": "الإجمالي المستحق: SAR {amount}",
+  "@totalDue": {
+    "placeholders": {
+      "amount": { "type": "String" }
+    }
+  },
+  "cashAmount": "المبلغ النقدي (SAR)",
+  "cardAmount": "مبلغ البطاقة (SAR)",
+  "bankAmount": "التحويل البنكي (SAR)",
+  "creditDues": "آجل / مستحقات (SAR)",
+  "fullyAllocated": "موزع بالكامل",
+  "remainingAmount": "المتبقي: SAR {amount}",
+  "@remainingAmount": {
+    "placeholders": {
+      "amount": { "type": "String" }
+    }
+  },
+  "overpaidAmount": "مدفوع بالزيادة: SAR {amount}",
+  "@overpaidAmount": {
+    "placeholders": {
+      "amount": { "type": "String" }
+    }
+  },
+  "confirmAndPay": "تأكيد ودفع",
+  "selectCounter": "اختر نقطة البيع",
+  "noCountersFound": "لم يتم العثور على نقاط بيع لهذا الفرع.",
+  "branch": "الفرع",
+  "close": "إغلاق",
+  "assignCustomer": "تعيين عميل",
+  "customerName": "اسم العميل",
+  "requiredText": "مطلوب",
+  "vatNumber": "الرقم الضريبي",
+  "phoneWhatsapp": "الهاتف (واتساب)",
+  "invoiceCreatedSuccessfully": "تم إنشاء الفاتورة بنجاح!",
+  "noItemsInInvoice": "لا توجد عناصر في الفاتورة",
+  "holdBtn": "تعليق",
+  "recallBtn": "استدعاء",
+  "voidBtn": "إلغاء",
+  "returnExchangeBtn": "إرجاع / استبدال",
+  "printBtn": "طباعة",
+  "whatsappBtn": "واتساب",
+  "tapToAssignCustomer": "انقر لتعيين عميل",
+  "noCounterSelected": "لم يتم تحديد نقطة بيع",
+  "subtotal": "المجموع الفرعي",
+  "discountText": "الخصم",
+  "vat15": "ضريبة القيمة المضافة (15%)",
+  "totalText": "الإجمالي",
+  "cash": "نقدي",
+  "card": "بطاقة",
+  "bank": "بنك",
+  "wallet": "محفظة",
+  "splitPaymentBtn": "تقسيم الدفع / آجل",
+  "saveAndPay": "حفظ ودفع SAR {amount}",
+  "@saveAndPay": {
+    "placeholders": {
+      "amount": { "type": "String" }
+    }
+  },
+  "invoiceSentWhatsApp": "تم إرسال الفاتورة عبر واتساب!",
+  "paymentLinkGenerated": "تم إنشاء رابط الدفع! جاري الفتح...",
+  "invoiceDetail": "تفاصيل الفاتورة",
+  "issueCreditNote": "إصدار إشعار دائن (إرجاع)",
+  "issueDebitNote": "إصدار إشعار مدين",
+  "payNow": "ادفع الآن",
+  "taxInvoiceTitle": "TAX INVOICE / فاتورة ضريبية",
+  "invoiceNo": "رقم الفاتورة: {no}",
+  "@invoiceNo": {
+    "placeholders": {
+      "no": { "type": "String" }
+    }
+  },
+  "dateText": "التاريخ: {date}",
+  "@dateText": {
+    "placeholders": {
+      "date": { "type": "String" }
+    }
+  },
+  "statusText": "الحالة: {status}",
+  "@statusText": {
+    "placeholders": {
+      "status": { "type": "String" }
+    }
+  },
+  "billedTo": "مفوتر إلى:",
+  "vatNo": "الرقم الضريبي: {vat}",
+  "@vatNo": {
+    "placeholders": {
+      "vat": { "type": "String" }
+    }
+  },
+  "description": "الوصف",
+  "zatcaQrCode": "رمز الاستجابة السريعة لهيئة الزكاة",
+  "subtotalAmount": "المجموع الفرعي: SAR {amount}",
+  "@subtotalAmount": {
+    "placeholders": {
+      "amount": { "type": "String" }
+    }
+  },
+  "vat15Amount": "ضريبة القيمة المضافة (15%): SAR {amount}",
+  "@vat15Amount": {
+    "placeholders": {
+      "amount": { "type": "String" }
+    }
+  },
+  "totalAmountSAR": "الإجمالي: SAR {amount}",
+  "@totalAmountSAR": {
+    "placeholders": {
+      "amount": { "type": "String" }
+    }
+  },
+  "hrDashboard": "لوحة الموارد البشرية",
+  "hrEmployees": "الموظفين"
 }

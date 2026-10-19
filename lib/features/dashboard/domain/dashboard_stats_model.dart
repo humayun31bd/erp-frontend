@@ -8,6 +8,7 @@ part 'dashboard_stats_model.g.dart';
 class DashboardStatsModel with _$DashboardStatsModel {
   const factory DashboardStatsModel({
     required double totalRevenue,
+    required double totalCashOnHand,
     required int invoicesCleared,
     required double overdueAmount,
     required bool isZatcaHealthy,

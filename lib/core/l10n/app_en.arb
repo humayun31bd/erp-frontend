@@ -1,6 +1,6 @@
 {
   "@@locale": "en",
-  "appName": "Numou ERP",
+  "appName": "Intelligent ERP",
   "dashboard": "Dashboard",
   "invoices": "Invoices",
   "createInvoice": "Create Invoice",
@@ -12,5 +12,231 @@
         "type": "String"
       }
     }
-  }
+  },
+  "login": "Login",
+  "phone": "Phone Number",
+  "password": "Password",
+  "loginButtonText": "Sign In",
+  "loginError": "Authentication failed. Please check your credentials.",
+  "welcomeBack": "Welcome Back",
+  "customers": "Customers",
+  "suppliers": "Suppliers",
+  "purchases": "Purchases",
+  "cashBook": "Cash Book",
+  "inventory": "Inventory",
+  "posCashier": "POS Cashier",
+  "posDashboard": "POS Dashboard",
+  "aiCopilot": "AI Copilot",
+  "whatsappLogs": "WhatsApp Logs",
+  "payments": "Payments",
+  "reports": "Reports",
+  "agencyPortal": "Agency Portal",
+  "settings": "Settings",
+  "languageSettings": "Language Settings",
+  "labelKey": "Label Key",
+  "englishValue": "English Value",
+  "arabicValue": "Arabic Value",
+  "actions": "Actions",
+  "update": "Update",
+  "save": "Save",
+  "cancel": "Cancel",
+  "manageBranches": "Manage Branches",
+  "addBranch": "Add Branch",
+  "branchName": "Branch Name",
+  "branchLocation": "Location",
+  "edit": "Edit",
+  "delete": "Delete",
+  "logout": "Logout",
+  "changeLanguage": "Change Language",
+  "english": "English",
+  "arabic": "العربية",
+  "aiAndLogs": "AI & LOGS",
+  "management": "MANAGEMENT",
+  "expandMenu": "Expand Menu",
+  "collapseMenu": "Collapse Menu",
+  
+  "tenants": "Tenants",
+  "marketingPlans": "Marketing Plans",
+  "noClientsFound": "No clients found. Add a new tenant.",
+  "addTenant": "Add Tenant",
+  "editPlan": "Edit Plan",
+  "noOfBranches": "No. of Branches (-1 for unlimited)",
+  "noOfCounters": "No. of Counters (-1 for unlimited)",
+  "invoicesPerMonth": "Invoices per Month (-1 for unlimited)",
+  "planUpdated": "Plan Updated",
+  "branches": "Branches",
+  "counters": "Counters",
+  "invoicesMo": "Invoices / Mo",
+  "unlimited": "Unlimited",
+  "dashboardTitle": "Dashboard",
+  "refreshDashboard": "Refresh Dashboard",
+  "zatcaOffline": "ZATCA Engine is currently offline or unreachable.",
+  "totalRevenue": "Total Revenue",
+  "clearedInvoices": "Cleared Invoices",
+  "overdueAmount": "Overdue Amount",
+  "recentActivity": "Recent Activity",
+  "failedToLoadDashboard": "Failed to load dashboard",
+  "retry": "Retry",
+  
+  "posDashboard": "POS Dashboard",
+  "quickActions": "Quick Actions",
+  "salesInvoice": "Sales Invoice",
+  "purchaseOrder": "Purchase Order",
+  "shipments": "Shipments",
+  "paymentReceipts": "Payment & Receipts",
+  "expenses": "Expenses",
+  "customer": "Customer",
+  "vendor": "Vendor",
+  "receiptsSettings": "Receipts Settings",
+  "summary": "Summary",
+  "salesOrder": "Sales Order",
+  "cashLedger": "Cash Ledger",
+  "more": "More...",
+  "configurationSettings": "Configuration & Settings",
+  "enableRestaurantMode": "Enable Restaurant POS Mode",
+  "currencyConfiguration": "Currency Configuration",
+  "lowStockProducts": "Low Stock Products",
+  "printerSettings": "Printer Settings",
+  "contactUs": "Contact Us",
+  "salesReporting": "Sales & Reporting",
+  "revenueReport": "Revenue Report",
+  "topProductsRevenue": "Top products by revenue",
+  "inventoryReport": "Inventory Report",
+  "lowStockAlerts": "Low stock alerts",
+  "noSalesData": "No sales data",
+  "sold": "Sold",
+  "stockLevelsGood": "Stock levels are good",
+  "dateSearch": "Date Search",
+  
+  "posTerminal": "POS Terminal",
+  "session": "Session",
+  "onlineSyncing": "Online & Syncing",
+  "searchProductHint": "Scan Barcode or Search Product (e.g. Software)...",
+  "item": "ITEM",
+  "qty": "QTY",
+  "price": "PRICE",
+  "discount": "DISCOUNT",
+  "total": "TOTAL",
+  "cartIsEmpty": "Cart is empty",
+  "scanToAdd": "Scan a barcode or search to add items",
+  "baseUnit": "Base Unit",
+  "addPurchaseInvoice": "Add Purchase Invoice",
+  "noPurchasesFound": "No purchases found.",
+  "supplierId": "Supplier ID",
+  "errorPrefix": "Error",
+  "walkInCustomer": "Walk-in Customer",
+  "addAtLeastOneItem": "Please add at least one item",
+  "splitPaymentCredit": "Split Payment / Credit",
+  "totalDue": "Total Due: SAR {amount}",
+  "@totalDue": {
+    "placeholders": {
+      "amount": { "type": "String" }
+    }
+  },
+  "cashAmount": "Cash Amount (SAR)",
+  "cardAmount": "Card Amount (SAR)",
+  "bankAmount": "Bank Amount (SAR)",
+  "creditDues": "Credit / Dues (SAR)",
+  "fullyAllocated": "Fully Allocated",
+  "remainingAmount": "Remaining: SAR {amount}",
+  "@remainingAmount": {
+    "placeholders": {
+      "amount": { "type": "String" }
+    }
+  },
+  "overpaidAmount": "Overpaid: SAR {amount}",
+  "@overpaidAmount": {
+    "placeholders": {
+      "amount": { "type": "String" }
+    }
+  },
+  "confirmAndPay": "Confirm & Pay",
+  "selectCounter": "Select Counter",
+  "noCountersFound": "No counters found for this branch/tenant.",
+  "branch": "Branch",
+  "close": "Close",
+  "assignCustomer": "Assign Customer",
+  "customerName": "Customer Name",
+  "requiredText": "Required",
+  "vatNumber": "VAT Number",
+  "phoneWhatsapp": "Phone (WhatsApp)",
+  "invoiceCreatedSuccessfully": "Invoice created successfully!",
+  "noItemsInInvoice": "No items in invoice",
+  "holdBtn": "Hold",
+  "recallBtn": "Recall",
+  "voidBtn": "Void",
+  "returnExchangeBtn": "Return / Exchange",
+  "printBtn": "Print",
+  "whatsappBtn": "WhatsApp",
+  "tapToAssignCustomer": "Tap to assign customer",
+  "noCounterSelected": "No Counter Selected",
+  "subtotal": "Subtotal",
+  "discountText": "Discount",
+  "vat15": "VAT (15%)",
+  "totalText": "Total",
+  "cash": "Cash",
+  "card": "Card",
+  "bank": "Bank",
+  "wallet": "Wallet",
+  "splitPaymentBtn": "SPLIT PAYMENT / CREDIT",
+  "saveAndPay": "SAVE & PAY SAR {amount}",
+  "@saveAndPay": {
+    "placeholders": {
+      "amount": { "type": "String" }
+    }
+  },
+  "invoiceSentWhatsApp": "Invoice sent via WhatsApp!",
+  "paymentLinkGenerated": "Payment link generated! Opening...",
+  "invoiceDetail": "Invoice Detail",
+  "issueCreditNote": "Issue Credit Note (Return)",
+  "issueDebitNote": "Issue Debit Note",
+  "payNow": "Pay Now",
+  "taxInvoiceTitle": "TAX INVOICE / فاتورة ضريبية",
+  "invoiceNo": "Invoice No: {no}",
+  "@invoiceNo": {
+    "placeholders": {
+      "no": { "type": "String" }
+    }
+  },
+  "dateText": "Date: {date}",
+  "@dateText": {
+    "placeholders": {
+      "date": { "type": "String" }
+    }
+  },
+  "statusText": "Status: {status}",
+  "@statusText": {
+    "placeholders": {
+      "status": { "type": "String" }
+    }
+  },
+  "billedTo": "Billed To:",
+  "vatNo": "VAT No: {vat}",
+  "@vatNo": {
+    "placeholders": {
+      "vat": { "type": "String" }
+    }
+  },
+  "description": "Description",
+  "zatcaQrCode": "ZATCA QR Code",
+  "subtotalAmount": "Subtotal: SAR {amount}",
+  "@subtotalAmount": {
+    "placeholders": {
+      "amount": { "type": "String" }
+    }
+  },
+  "vat15Amount": "VAT (15%): SAR {amount}",
+  "@vat15Amount": {
+    "placeholders": {
+      "amount": { "type": "String" }
+    }
+  },
+  "totalAmountSAR": "Total Amount: SAR {amount}",
+  "@totalAmountSAR": {
+    "placeholders": {
+      "amount": { "type": "String" }
+    }
+  },
+  "hrDashboard": "HR Dashboard",
+  "hrEmployees": "Employees"
 }
