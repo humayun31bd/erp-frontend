@@ -124,6 +124,7 @@ class SidebarItem {
   final String? routeName;
   final String? routePath;
   final int badgeCount;
+  final bool isComingSoon;
 
   const SidebarItem({
     required this.label,
@@ -133,9 +134,124 @@ class SidebarItem {
     this.routeName,
     this.routePath,
     this.badgeCount = 0,
+    this.isComingSoon = false,
   });
 
   String getLabel(bool isAr) => isAr && labelAr != null ? labelAr! : label;
+}
+
+/// Safely attempts to navigate to [item.routeName].
+/// If the route is unconfigured, throws an error, or is flagged as coming soon,
+/// a user-friendly 'Feature Coming Soon' notification is displayed.
+void handleSidebarNavigation(BuildContext context, SidebarItem item, bool isArabic) {
+  if (item.isComingSoon || item.routeName == null || item.routeName!.isEmpty) {
+    showComingSoonNotice(context, item, isArabic);
+    return;
+  }
+
+  try {
+    final router = GoRouter.of(context);
+    // router.namedLocation throws if route name does not exist
+    router.namedLocation(item.routeName!);
+    context.goNamed(item.routeName!);
+  } catch (_) {
+    showComingSoonNotice(context, item, isArabic);
+  }
+}
+
+/// Displays an elegant floating SnackBar notifying the user that the feature will arrive in the next update.
+void showComingSoonNotice(BuildContext context, SidebarItem item, bool isArabic) {
+  final itemName = item.getLabel(isArabic);
+  final title = isArabic ? 'ميزة قادمة قريباً' : 'Feature Coming Soon';
+  final message = isArabic
+      ? 'ميزة "$itemName" قيد التطوير وستتوفر في التحديث القادم بإذن الله!'
+      : '"$itemName" is in active development and will be available in the next update!';
+
+  ScaffoldMessenger.of(context).hideCurrentSnackBar();
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(
+      behavior: SnackBarBehavior.floating,
+      elevation: 6,
+      margin: const EdgeInsets.all(16),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      backgroundColor: const Color(0xFF1E293B),
+      duration: const Duration(seconds: 4),
+      content: Row(
+        children: [
+          Container(
+            padding: const EdgeInsets.all(8),
+            decoration: BoxDecoration(
+              color: const Color(0xFF3B82F6).withValues(alpha: 0.15),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: const Icon(
+              Icons.rocket_launch_rounded,
+              color: Color(0xFF60A5FA),
+              size: 22,
+            ),
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: const TextStyle(
+                    color: Color(0xFF93C5FD),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 13,
+                  ),
+                ),
+                const SizedBox(height: 2),
+                Text(
+                  message,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 12,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+      action: SnackBarAction(
+        label: isArabic ? 'حسناً' : 'Got it',
+        textColor: const Color(0xFF60A5FA),
+        onPressed: () {
+          ScaffoldMessenger.of(context).hideCurrentSnackBar();
+        },
+      ),
+    ),
+  );
+}
+
+class _SoonBadge extends StatelessWidget {
+  final bool isArabic;
+  const _SoonBadge({required this.isArabic});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
+      decoration: BoxDecoration(
+        color: const Color(0xFFF59E0B).withValues(alpha: 0.15),
+        border: Border.all(color: const Color(0xFFF59E0B).withValues(alpha: 0.35)),
+        borderRadius: BorderRadius.circular(4),
+      ),
+      child: Text(
+        isArabic ? 'قريباً' : 'SOON',
+        style: const TextStyle(
+          color: Color(0xFFFBBF24),
+          fontSize: 9,
+          fontWeight: FontWeight.w700,
+          letterSpacing: 0.5,
+        ),
+      ),
+    );
+  }
 }
 
 class SidebarGroup {
@@ -1040,11 +1156,7 @@ class _ErpSidebarState extends ConsumerState<ErpSidebar>
                       _CollapsedNavItem(
                         item: item,
                         isActive: _isItemActive(item, currentPath),
-                        onTap: () {
-                          if (item.routeName != null) {
-                            context.goNamed(item.routeName!);
-                          }
-                        },
+                        onTap: () => handleSidebarNavigation(context, item, isArabic),
                       ),
                     const SizedBox(height: 4),
                   ],
@@ -1072,11 +1184,7 @@ class _ErpSidebarState extends ConsumerState<ErpSidebar>
                     _ExpandedNavItem(
                       item: item,
                       isActive: _isItemActive(item, currentPath),
-                      onTap: () {
-                        if (item.routeName != null) {
-                          context.goNamed(item.routeName!);
-                        }
-                      },
+                      onTap: () => handleSidebarNavigation(context, item, isArabic),
                     ),
                 ],
               );
@@ -1329,7 +1437,9 @@ class _ExpandedNavItemState extends ConsumerState<_ExpandedNavItem> {
                     ),
                   ),
                   if (widget.item.badgeCount > 0)
-                    _Badge(count: widget.item.badgeCount),
+                    _Badge(count: widget.item.badgeCount)
+                  else if (widget.item.isComingSoon || widget.item.routeName == null)
+                    _SoonBadge(isArabic: isArabic),
                 ],
               ),
             ),
@@ -1767,9 +1877,8 @@ class ErpMobileDrawer extends ConsumerWidget {
                               currentPath.startsWith(item.routePath!),
                           onTap: () {
                             Navigator.pop(context);
-                            if (item.routeName != null) {
-                              context.goNamed(item.routeName!);
-                            }
+                            final isArabic = ref.watch(localeProvider).languageCode == 'ar';
+                            handleSidebarNavigation(context, item, isArabic);
                           },
                         ),
                     ],
